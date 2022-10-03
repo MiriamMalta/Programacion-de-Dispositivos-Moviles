@@ -248,6 +248,13 @@ class _FavoritesState extends State<FavoritesS> {
                     duration: Duration(seconds: 1),
                   ),
                 );
+                ScaffoldMessenger.of(context)
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text("Removiendo de favoritos..."),
+                    duration: Duration(seconds: 1),
+                  ),
+                );
                 BlocProvider.of<FavoritesBloc>(context).add(FavoritesDeleteFrom(
                   song['title'],
                   song['artist'],
