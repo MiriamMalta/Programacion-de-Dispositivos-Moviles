@@ -240,6 +240,14 @@ class _FavoritesState extends State<FavoritesS> {
             TextButton(
               onPressed: () { 
                 Navigator.pop(context, 'Cancel');
+                ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text("Procesando..."),
+                    duration: Duration(seconds: 1),
+                  ),
+                );
                 BlocProvider.of<FavoritesBloc>(context).add(FavoritesDeleteFrom(
                   song['title'],
                   song['artist'],
@@ -250,6 +258,10 @@ class _FavoritesState extends State<FavoritesS> {
                   song['image'],
                   song['song_link'],
                 ));
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (BuildContext context) => super.widget),
+                );
               },
               child: Text(
                 "Eliminar",

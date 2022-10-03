@@ -193,6 +193,14 @@ class DetailsSong extends StatelessWidget {
             TextButton(
               onPressed: () { 
                 Navigator.pop(context, 'Cancel');
+                ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text("Procesando..."),
+                    duration: Duration(seconds: 1),
+                  ),
+                );
                 BlocProvider.of<FavoritesBloc>(context).add(FavoritesEventAddFrom(
                   title,
                   artist,
