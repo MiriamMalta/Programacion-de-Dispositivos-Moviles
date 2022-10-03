@@ -49,7 +49,7 @@ class DetailsSong extends StatelessWidget {
                 onPressed: () {
                   _addToFavorites(context);
                 },
-                icon: Icon(Icons.favorite_border, color: Colors.white),
+                icon: _favorite(),
               )
             ],
           ),
@@ -193,14 +193,6 @@ class DetailsSong extends StatelessWidget {
             TextButton(
               onPressed: () { 
                 Navigator.pop(context, 'Cancel');
-                ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(
-                  SnackBar(
-                    content: Text("Procesando..."),
-                    duration: Duration(seconds: 1),
-                  ),
-                );
                 BlocProvider.of<FavoritesBloc>(context).add(FavoritesEventAddFrom(
                   title,
                   artist,
@@ -223,22 +215,41 @@ class DetailsSong extends StatelessWidget {
     );
   }
 
-  // Icon(Icons.favorite_border, color: Colors.white,)
-  // Icon(Icons.favorite, color: Colors.white,),
-  /* Widget _heart() {
-    return BlocBuilder<FavoritesBloc, FavoritesState>(
-      
+  BlocConsumer<FavoritesBloc, FavoritesState> _favorite() {
+    return BlocConsumer<FavoritesBloc, FavoritesState>(
+      listener: (context, state) {
+        if (state is FavoritesHeartState) {
+          ScaffoldMessenger.of(context)
+          ..hideCurrentSnackBar()
+          ..showSnackBar(
+            SnackBar(
+              content: Text("Procesando..."),
+              duration: Duration(seconds: 1),
+            ),
+          );
+          ScaffoldMessenger.of(context)
+            ..showSnackBar(
+              SnackBar(
+                content: Text("${state.heart}"),
+              ),
+            );
+        } else if (state is FavoritesErrorState) {
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(
+              SnackBar(
+                content: Text(state.error),
+              ),
+            );
+        }
+      },
       builder: (context, state) {
         if (state is FavoritesHeartState) {
-          if (state.favorites.contains(title)) {
-            return Icon(Icons.favorite, color: Colors.red);
-          } else {
-            return Icon(Icons.favorite_border, color: Colors.white);
-          }
+          return Icon(Icons.favorite, color: Colors.white,);
         } else {
-          return Icon(Icons.favorite_border, color: Colors.white);
+          return Icon(Icons.favorite_border, color: Colors.white,);
         }
       },
     );
-  } */
+  }
 }
