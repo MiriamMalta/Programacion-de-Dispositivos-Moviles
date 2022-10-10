@@ -197,12 +197,12 @@ class _HomePageState extends State<HomePage> {
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          padding: EdgeInsets.all(12),
-          color: Colors.teal[100],
+          padding: EdgeInsets.all(4),
+          //color: Colors.teal[100],
           child: Column(
             children: [
               Container(
-                height: (MediaQuery.of(context).size.height / 4.45),
+                height: (MediaQuery.of(context).size.height / 4.4),
                 color: Colors.grey[300],
               ),
               SizedBox(height: 8,),
