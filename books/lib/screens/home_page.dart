@@ -188,7 +188,7 @@ class _HomePageState extends State<HomePage> {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+        mainAxisSpacing: 25,
         childAspectRatio: MediaQuery.of(context).size.width /
         (MediaQuery.of(context).size.height / 1.5),
       ),// cuantos elementos quieres lado a lado
