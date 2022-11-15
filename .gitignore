@@ -150,3 +150,6 @@ app.*.symbols
 # Mine
 # Android related
 **/lib/utils/secrets.dart
+
+# Specific to this project
+find_track_app/lib/music/utils/secrets.dart
