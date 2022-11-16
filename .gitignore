@@ -151,6 +151,9 @@ app.*.symbols
 # Android related
 **/lib/utils/secrets.dart
 
+# Firebase
+google-services.json
+
 # Specific to this project
 find_track_app/lib/music/utils/secrets.dart
 find_track_app_v2/lib/music/utils/secrets.dart
