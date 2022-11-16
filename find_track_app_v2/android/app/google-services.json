@@ -1,0 +1,186 @@
+{
+  "project_info": {
+    "project_number": "171306742846",
+    "project_id": "moviles-octubre-19",
+    "storage_bucket": "moviles-octubre-19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171306742846:android:d4e5f8b2e7f7a5078b0d6f",
+        "android_client_info": {
+          "package_name": "com.example.find_track_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171306742846-setvjtbbu3j10h15b277re3qrf4hq994.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.find_track_app",
+            "certificate_hash": "b586045f598f485ef67f1e8772d84ebac6819327"
+          }
+        },
+        {
+          "client_id": "171306742846-dof9bbdl3ujtk0qli23de3crik82ai3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT0T89bwfDv7pLkdz2CIF497YHM0406pI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171306742846-dof9bbdl3ujtk0qli23de3crik82ai3q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "171306742846-0j8ct916be2hoitgqb8qs3aahi3f9ckv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.iteso.fotoShareApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171306742846:android:a1e99037f7a9f52a8b0d6f",
+        "android_client_info": {
+          "package_name": "com.example.fire_tweeter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171306742846-uvdoj6p5s0fotc7dhjboaut60cfkkpn0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fire_tweeter",
+            "certificate_hash": "b586045f598f485ef67f1e8772d84ebac6819327"
+          }
+        },
+        {
+          "client_id": "171306742846-dof9bbdl3ujtk0qli23de3crik82ai3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT0T89bwfDv7pLkdz2CIF497YHM0406pI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171306742846-dof9bbdl3ujtk0qli23de3crik82ai3q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "171306742846-0j8ct916be2hoitgqb8qs3aahi3f9ckv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.iteso.fotoShareApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171306742846:android:bf3eedf0e4721f708b0d6f",
+        "android_client_info": {
+          "package_name": "mx.iteso.foto_share_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171306742846-qlhn7nvultlthrag74f3soim4mniv76o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.iteso.foto_share_app",
+            "certificate_hash": "b586045f598f485ef67f1e8772d84ebac6819327"
+          }
+        },
+        {
+          "client_id": "171306742846-dof9bbdl3ujtk0qli23de3crik82ai3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT0T89bwfDv7pLkdz2CIF497YHM0406pI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171306742846-dof9bbdl3ujtk0qli23de3crik82ai3q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "171306742846-0j8ct916be2hoitgqb8qs3aahi3f9ckv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.iteso.fotoShareApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171306742846:android:f228c94fc4ea0c178b0d6f",
+        "android_client_info": {
+          "package_name": "mx.iteso.fshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171306742846-99rtbq0p6eqkfpktuofu7pj6t5qm10f2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.iteso.fshare",
+            "certificate_hash": "b586045f598f485ef67f1e8772d84ebac6819327"
+          }
+        },
+        {
+          "client_id": "171306742846-dof9bbdl3ujtk0qli23de3crik82ai3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT0T89bwfDv7pLkdz2CIF497YHM0406pI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171306742846-dof9bbdl3ujtk0qli23de3crik82ai3q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "171306742846-0j8ct916be2hoitgqb8qs3aahi3f9ckv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.iteso.fotoShareApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

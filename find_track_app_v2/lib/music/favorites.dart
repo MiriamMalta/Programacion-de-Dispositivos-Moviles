@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'auth/user_auth_repository.dart';
 import 'bloc/favorites/favorites_bloc.dart';
 import 'details_song.dart';
 
@@ -54,7 +56,7 @@ class _FavoritesState extends State<FavoritesS> {
           else return Container(
             child: Column(
               children: [
-                _listArea(context),
+                _listArea(),
               ],
             ),
           );
@@ -64,9 +66,41 @@ class _FavoritesState extends State<FavoritesS> {
         }
       },
     );
-  }
+  } 
 
-  Widget _listArea(BuildContext context) {
+  /* _showFavorites() {
+    CollectionReference user = FirebaseFirestore.instance.collection('p2_song');
+    return FutureBuilder<DocumentSnapshot>(
+      future: user.doc(UserAuthRepository().getuid()).get(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+        if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.hasData) {
+            Map<String, dynamic>? data = snapshot.data!.data() as Map<String, dynamic>?;
+            if (data != null) {
+              //_listSongs = data['favorites'];
+              //print(_listSongs);
+              print(data['favorites']);
+              if (data['favorites'].length == 0) return _empty(context);
+              else return Container(
+                child: Column(
+                  children: [
+                    _listArea(data['favorites']),
+                  ],
+                ),
+              );
+            };
+          }
+        }
+        return Center(child: CircularProgressIndicator());
+      },
+    );
+  } */
+
+  Widget _listArea() { //List<dynamic> _listSongs
     return Container(
       width: double.infinity,
       child: SizedBox(
@@ -260,6 +294,7 @@ class _FavoritesState extends State<FavoritesS> {
                   context,
                   MaterialPageRoute(builder: (BuildContext context) => super.widget),
                 );
+                setState(() {});
               },
               child: Text(
                 "Eliminar",

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'auth/bloc/auth_bloc.dart';
+import 'bloc/favorites/favorites_bloc.dart';
 import 'bloc/song/song_bloc.dart';
 import 'details_song.dart';
 import 'favorites.dart';
@@ -97,7 +99,14 @@ class _MusicAnimationState extends State<MusicAnimation> with SingleTickerProvid
               _text(text),
               SizedBox(height: 40),
               _searchSong(context),
-              _favorites(context),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _favorites(context),
+                  SizedBox(width: 30),
+                  _logoutButton(context),
+                ],
+              )
             ],
         ),
       );
@@ -113,7 +122,14 @@ class _MusicAnimationState extends State<MusicAnimation> with SingleTickerProvid
               _text(text),
               SizedBox(height: 40),
               _searchSong2(context),
-              _favorites(context),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _favorites(context),
+                  SizedBox(width: 30),
+                  _logoutButton(context),
+                ],
+              ),
             ],
         ),
       );
@@ -169,26 +185,38 @@ class _MusicAnimationState extends State<MusicAnimation> with SingleTickerProvid
     );
   }
 
-  Column _favorites(BuildContext context){
-    return Column(
-      children: [
-        CircleAvatar(
-          radius: 20, 
-          backgroundColor: Colors.white,
-          child: IconButton(
-            onPressed: () {
-              //print("Favoritos");
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => FavoritesS(
-                  ),
-                ),
-              );
-            },
-            icon: Icon(Icons.favorite, color: Colors.black),
-          ),
-        ),
-      ],
+  Widget _favorites(BuildContext context){
+    return CircleAvatar(
+      radius: 20, 
+      backgroundColor: Colors.white,
+      child: IconButton(
+        onPressed: () {
+          //print("Favoritos");
+          BlocProvider.of<FavoritesBloc>(context).add(FavoritesEventAddTo(
+            
+          ));
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => FavoritesS(
+              ),
+            ),
+          );
+        },
+        icon: Icon(Icons.favorite, color: Colors.black),
+      ),
+    );
+  }
+
+  Widget _logoutButton(BuildContext context){
+    return CircleAvatar(
+      radius: 20, 
+      backgroundColor: Colors.white,
+      child: IconButton(
+        onPressed: () {
+          _logout(context);
+        },
+        icon: Icon(Icons.power_settings_new, color: Colors.black),
+      ),
     );
   }
 
@@ -227,6 +255,39 @@ class _MusicAnimationState extends State<MusicAnimation> with SingleTickerProvid
           ),
         );
       },
+    );
+  }
+
+  void _logout(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Cerrar sesión"),
+          content: Text("Al cerrar sesión de su cuenta será redirigido a la pantalla de Log In ¿Quiere continuar?"),
+          actions: [
+            TextButton(
+              onPressed: () { 
+                Navigator.pop(context, 'Cancel');
+              },
+              child: Text(
+                "Cancelar",
+                style: TextStyle(color: Colors.purple.shade200)
+              ),
+            ),
+            TextButton(
+              onPressed: () { 
+                BlocProvider.of<AuthBloc>(context).add(SignOutEvent());
+                Navigator.pop(context, 'Cancel');
+              },
+              child: Text(
+                "Continuar",
+                style: TextStyle(color: Colors.purple.shade200)
+              ),
+            ),
+          ],
+        );
+      }
     );
   }
 }

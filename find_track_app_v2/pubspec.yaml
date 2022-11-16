@@ -31,23 +31,26 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  equatable: ^2.0.5 # https://pub.dev/packages/equatable/install
-  #font_awesome_flutter: ^10.2.1 # https://pub.dev/packages/font_awesome_flutter/install
-  path_provider: ^2.0.11 # https://pub.dev/packages/path_provider/install
-  permission_handler: ^10.0.2 # https://pub.dev/packages/permission_handler/install
-  #flutter_dotenv: ^5.0.2 # https://pub.dev/packages/flutter_dotenv/install
-  http: ^0.13.5 # https://pub.dev/packages/http/install
-  http_parser: ^4.0.1 # https://pub.dev/packages/http_parser/install
-  #avatar_glow: ^2.0.2 # https://pub.dev/packages/avatar_glow/install
-  provider: ^6.0.3 # https://pub.dev/packages/provider/install
-  flutter_bloc: ^8.1.1 # https://pub.dev/packages/flutter_bloc/install
-  url_launcher: ^6.1.6 # https://pub.dev/packages/url_launcher/install
-  record: ^4.4.0 # https://pub.dev/packages/record/install
+  flutter_bloc: 
+  # Widgets
+  cupertino_icons: 
+  url_launcher: 
+  record: 
+  http: 
+  http_parser: 
+  provider: 
+  path_provider: 
+  permission_handler: 
+  equatable:
+  # Details
+  loading_animation_widget:
+  # Firebase
+  firebase_core: 
+  firebase_auth: 
+  cloud_firestore: 
+  firebase_ui_firestore:
+  # Google
+  google_sign_in: 
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +63,9 @@ dev_dependencies:
   # rules and activating additional ones.
   # flutter_lints: ^2.0.0
   flutter_launcher_icons: ^0.10.0 # https://pub.dev/packages/flutter_launcher_icons/install
+
+dependency_overrides:
+  firebase_messaging_platform_interface:
 
 flutter_icons:
   android: 'launcher_icon'
@@ -86,6 +92,13 @@ flutter:
     - assets/apple_icon.png
     - assets/bunny_libgloss_3.gif
     - assets/icon1.png
+    - assets/google_icon.png
+
+    # Test
+    - assets/background_1.gif
+    - assets/background_2.gif
+    - assets/background_3.gif
+    - assets/background_4.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

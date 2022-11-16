@@ -8,14 +8,7 @@ abstract class FavoritesEvent extends Equatable{
   List<Object?> get props => [];
 }
 
-class FavoritesEventAddTo extends FavoritesEvent {
-  final List<dynamic> favoritesInfo;
-
-  FavoritesEventAddTo({required this.favoritesInfo});
-
-  @override
-  List<Object?> get props => [favoritesInfo];
-}
+class FavoritesEventAddTo extends FavoritesEvent {}
 
 class FavoritesEventAddFrom extends FavoritesEvent {
   final String title;
